@@ -69,7 +69,7 @@ class TestPalindromeChecker(unittest.TestCase):
         input_data = " "
         expected_error_message = "Error: Input cannot be empty\n"
 
-        sys.stdin = io.StringIO()  # Змініть на цей рядок
+        sys.stdin = io.StringIO() 
         sys.stdin.write(input_data)
         sys.stdin.seek(0)
         sys.stdout = io.StringIO()
