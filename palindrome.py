@@ -2,9 +2,12 @@ import sys
 
 def is_palindrome(s):
 
-    # Видаляємо всі пробіли і перетворюємо рядок у нижній регістр
-    s = s.replace(" ", "").lower()
+    if not isinstance(s, str):
+        raise TypeError("Input must be a string")
 
+    # Видаляємо всі пробіли і перетворюємо рядок у нижній регістр
+    s = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
+    
     # Перевіряємо, чи дорівнює рядок своєму зворотному вигляду
     return s == s[::-1]
 
