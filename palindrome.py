@@ -1,4 +1,5 @@
 import sys
+import re
 
 def is_palindrome(s):
 
@@ -14,7 +15,10 @@ def is_palindrome(s):
 def main():
 
     try:
-        input_str = input().strip()
+        input_str = sys.stdin.readline().strip()
+
+        if not input_str:
+            raise ValueError("Input cannot be empty") 
 
         if is_palindrome(input_str):
             print(True)
